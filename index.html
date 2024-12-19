@@ -105,8 +105,8 @@
     <input type="text" id="commandInput" placeholder="Enter a command..." />
     <div class="hints" id="hintsBox">
       <ul>
-        <li><strong>go to first page</strong></li>
-        <li><strong>go to second page</strong></li>
+        <li><strong>go to page 1</strong></li>
+        <li><strong>go to page 2</strong></li>
         <li><strong>...</strong></li>
       </ul>
     </div>
@@ -117,6 +117,7 @@
     <li><strong>Second page:</strong> a simple ascii based design. Nothing special. Can be made cooler.</li>
     <li><strong>Third page:</strong> i had a few versions on this. Here basically the logo would play an essential role in the site. Somehow better than how it does rn.</li>
     <li><strong>Fourth page: </strong> nothing special, but has a spinning logo.</li>
+    <li><strong>5-7:</strong> new pages added last</li>
     <li><strong>+1: </strong> a very simple site where you navigate with commands like this</li>
   </ul>
 
@@ -135,16 +136,22 @@
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         const command = input.value.trim().toLowerCase();
-        if (command === 'go to first page') {
+        if (command === 'go to page 1') {
           window.location.href = 'index1.html';
-        } else if (command === 'go to second page') { 
+        } else if (command === 'go to page 2') { 
             window.location.href = 'index2.html';
-        } else if (command === 'go to third page') { 
+        } else if (command === 'go to page 3') { 
             window.location.href = 'index3.html';
-        }else if (command === 'go to fourth page') { 
+        }else if (command === 'go to page 4') { 
             window.location.href = 'index4.html';
-        }else if (command === 'go to fifth page') { 
-            alert('sowwy, there are only 4 pages (+ this one)');
+        }else if (command === 'go to page 5') { 
+            window.location.href = 'index5.html';
+        }else if (command === 'go to page 6') { 
+            window.location.href = 'index6.html';
+        }else if (command === 'go to page 7') { 
+            window.location.href = 'index9.html';
+        }else if (command === 'go to page 8') { 
+            alert('sowwy, there are only 7 pages (+ this one)');
         }else {
           alert(`Unknown command: "${input.value}"`);
         }
