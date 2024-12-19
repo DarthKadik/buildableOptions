@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>XOTC - OTC Trading For Everyone</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    body {
+        margin: 0;
+        background: #0a0a0a;
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    a {
+        color: #f24236;
+        text-decoration: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: #0a0a0a;
+        position: relative;
+        z-index: 10;
+    }
+
+    nav .logo {
+        font-size: 1.5rem;
+        color: #f24236;
+    }
+
+    nav .menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    nav .menu a {
+        font-weight: 600;
+        padding: 10px 20px;
+        border: 1px solid #f24236;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+
+    nav .menu a:hover {
+        background: #f24236;
+        color: #0a0a0a;
+    }
+
+    .hero {
+        position: relative;
+        padding: 100px 20px;
+        text-align: center;
+        background: #0f0f0f;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top:0; left:0; right:0; bottom:0;
+        background: url('hero-background.jpg') center/cover no-repeat;
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #f24236;
+    }
+
+    .hero p {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #f3a712;
+    }
+
+    .hero .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #f24236;
+        color: #0a0a0a;
+        border-radius: 4px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        transition: background 0.3s;
+    }
+
+    .hero .cta-button:hover {
+        background: #b7e500;
+    }
+
+    .partners {
+        background: #0a0a0a;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .partners h2 {
+        font-size: 2rem;
+        color: #ffffff;
+        margin-bottom: 40px;
+    }
+
+    .partners .logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .partners .logos img {
+        max-height: 40px;
+        filter: brightness(0) invert(1);
+        opacity: 0.7;
+    }
+
+    .what-is {
+        background: #0f0f0f;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+    }
+
+    .what-is h2 {
+        font-size: 2.5rem;
+        color: #f24236;
+        margin-bottom: 30px;
+    }
+
+    .what-is-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .what-is .info-box {
+        background: #141414;
+        padding: 40px;
+        border: 1px solid #f24236;
+        border-radius: 8px;
+        width: 320px;
+        text-align: left;
+    }
+
+    .what-is .info-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #f24236;
+    }
+
+    .what-is .info-box p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #f3a712;
+    }
+
+    .why {
+        background: #0a0a0a;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .why h2 {
+        font-size: 2.5rem;
+        color: #f24236;
+        margin-bottom: 50px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .feature-card {
+        background: #141414;
+        border: 1px solid #f24236;
+        padding: 40px;
+        border-radius: 8px;
+    }
+
+    .feature-card h4 {
+        font-size: 1.2rem;
+        color: #f24236;
+        margin-bottom: 15px;
+    }
+
+    .feature-card p {
+        font-size: 0.95rem;
+        color: #f3a712;
+    }
+
+    .why .description {
+        max-width: 700px;
+        margin: 50px auto 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #f3a712;
+    }
+
+    .roadmap {
+        background: #0f0f0f;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .roadmap h2 {
+        font-size: 2.5rem;
+        color: #f24236;
+        margin-bottom: 50px;
+    }
+
+    .timeline {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #f24236;
+    }
+
+    .timeline-step {
+        position: relative;
+        margin-bottom: 60px;
+        text-align: left;
+        color: #f3a712;
+    }
+
+    .timeline-step h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #f24236;
+    }
+
+    .timeline-step p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .timeline-step::before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        background: #0a0a0a;
+        border: 2px solid #f24236;
+        border-radius: 50%;
+    }
+
+    .early-access {
+        background: #0a0a0a;
+        padding: 100px 20px;
+        position: relative;
+        text-align: center;
+    }
+
+    .early-access::before {
+        content: "";
+        position: absolute;
+        top:0; left:0; right:0; bottom:0;
+        background: url('cityscape.jpg') center/cover no-repeat;
+        opacity: 0.15;
+        z-index: -1;
+    }
+
+    .early-access h2 {
+        font-size: 2.5rem;
+        color: #f24236;
+        margin-bottom: 40px;
+    }
+
+    .early-access p {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        font-size: 1rem;
+        color: #f3a712;
+        line-height: 1.6;
+    }
+
+    .early-access .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #f24236;
+        color: #0a0a0a;
+        border-radius: 4px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        transition: background 0.3s;
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+
+    .early-access .cta-button:hover {
+        background: #b7e500;
+    }
+
+    footer {
+        background: #0f0f0f;
+        padding: 40px 20px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: #f3a712;
+    }
+
+    footer .links {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 20px;
+    }
+
+    footer .links a {
+        color: #f24236;
+        font-weight: 600;
+    }
+
+    footer p {
+        color: #f3a712;
+    }
+
+    @media(max-width: 768px) {
+        .what-is-content,
+        .integration,
+        .partners .logos {
+            flex-direction: column;
+        }
+
+        nav {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .timeline {
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            left: 40px;
+        }
+
+        .timeline-step::before {
+            left: 28px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Buildable</div>
+    <div class="menu">
+        <a href="#">Sign up</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Build whatever</h1>
+    <p>A high-speed train-network for chimpanzees, the Great Mongol Empire, a unicycle reservation app...<br>Join us and build your dream.</p>
+    <a href="#" class="cta-button">Sign up</a>
+</section>
+
+<section class="things">
+    <h2>Random thingies</h2>
+    <div class="logos">
+        <img src="thing1.png" alt="Thing 1"/>
+        <img src="thing2.png" alt="Thing 2"/>
+        <img src="thing3.png" alt="Thing 3"/>
+        <img src="thing4.png" alt="Thing 4"/>
+        <img src="thing5.png" alt="Thing 5"/>
+    </div>
+</section>
+
+<section class="what-is">
+    <h2>What is Buildable?</h2>
+    <div class="what-is-content">
+        <div class="info-box">
+            <h3>Explanation</h3>
+            <p>Yappiedie yappada yappididie douuuu</p>
+            <p>More yapping</p>
+        </div>
+        <div class="info-box">
+            <h3>More</h3>
+            <p>Bla bla bla blaaaa</p>
+            <p>Blabiebiedibidiedu</p>
+        </div>
+    </div>
+</section>
+
+<section class="why">
+    <h2>Why?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h4>Reason 1</h4>
+            <p> Nemo assumenda quis possimus atque perferendis non mollitia delectus eos earum facere aspernatur quo esse.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Reason 2</h4>
+            <p>Reprehenderit beatae doloremque. Alias dicta incidunt quo.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Reason 3</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Reason 4</h4>
+            <p>Clownfish change sex when needed to ensure reproduction.</p>
+        </div>
+    </div>
+    <div class="description">
+        The so called "why" is a very important question. It is the question that drives us, that makes us get up in the morning, that makes us want to change the world.
+    </div>
+</section>
+
+<section class="roadmap">
+    <h2>Roadmap</h2>
+    <div class="timeline">
+        <div class="timeline-step">
+            <h3>---Arm race</h3>
+            <p>More weapons to more countries.</p>
+        </div>
+        <div class="timeline-step">
+            <h3>---Restarting nuclear tests</h3>
+            <p>Nuclear weapons need to be tested to ensure their effectiveness.</p>
+        </div>
+        <div class="timeline-step">
+            <h3>---First accident</h3>
+            <p>A test goes sideways alarming other nations.</p>
+        </div>
+        <div class="timeline-step">
+            <h3>---Shots fired</h3>
+            <p>As a response nations retaliate to the perceived threat.</p>
+        </div>
+        <div class="timeline-step">
+            <h3>---Nuclear apocalypse</h3>
+            <p>The age of the Sapiens will pass in a blink</p>
+        </div>
+    </div>
+</section>
+
+<section class="early-access">
+    <h2>Sign up now!</h2>
+    <p>Because you are special and precious.</p>
+    <a href="#" class="cta-button">Get Early Access</a>
+</section>
+
+<footer>
+    <div class="links">
+        <a href="#">Ig</a>
+        <a href="#">X</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+    <p>©All Koalas alive</p>
+</footer>
+
+</body>
+</html>
