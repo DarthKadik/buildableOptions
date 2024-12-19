@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Minimal Command Page</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #000003;
+    color: #fbfbfb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    margin-bottom: 2em;
+    max-width: 90%;
+    text-align: center;
+    color: #fbfbfb;
+    line-height: 1.4;
+  }
+
+  .command-input-container {
+    position: relative;
+    width: 300px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  input[type="text"]:focus {
+    border-color: #888;
+  }
+
+  .hints {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    font-size: 0.9rem;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: none;
+  }
+
+  .hints.visible {
+    display: block;
+  }
+
+  .hints ul {
+    list-style-type: none;
+    padding: 0.5em;
+    margin: 0;
+  }
+
+  .hints li {
+    padding: 0.25em 0;
+  }
+
+  .hints li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
+
+  .hints strong {
+    color: #333;
+  }
+
+  #commandInput {
+    font-family: monospace;
+    background: #000003;
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <h1>Heyo, here are 4+1 options I super quickly put together</h1>
+  <p>They are all bad, but they show a concept not a final version so judge accordingly and choose which one you like the most. OR alternatively suggest something better.</p>
+  <p>Yes, these should have been Figma prototypes. Yes I overcomplicated things again.</p>
+
+  <div class="command-input-container">
+    <input type="text" id="commandInput" placeholder="Enter a command..." />
+    <div class="hints" id="hintsBox">
+      <ul>
+        <li><strong>go to first page</strong></li>
+        <li><strong>go to second page</strong></li>
+        <li><strong>...</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>First page: </strong> most buildspace like but maybe different enough</li>
+    <li><strong>Second page:</strong> a simple ascii based design. Nothing special. Can be made cooler.</li>
+    <li><strong>Third page:</strong> i had a few versions on this. Here basically the logo would play an essential role in the site. Somehow better than how it does rn.</li>
+    <li><strong>Fourth page: </strong> nothing special, but has a spinning logo.</li>
+    <li><strong>+1: </strong> a very simple site where you navigate with commands like this</li>
+  </ul>
+
+  <script>
+    const input = document.getElementById('commandInput');
+    const hints = document.getElementById('hintsBox');
+
+    input.addEventListener('focus', () => {
+      hints.classList.add('visible');
+    });
+
+    input.addEventListener('blur', () => {
+      setTimeout(() => hints.classList.remove('visible'), 150);
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const command = input.value.trim().toLowerCase();
+        if (command === 'go to first page') {
+          window.location.href = 'index1.html';
+        } else if (command === 'go to second page') { 
+            window.location.href = 'index2.html';
+        } else if (command === 'go to third page') { 
+            window.location.href = 'index3.html';
+        }else if (command === 'go to fourth page') { 
+            window.location.href = 'index4.html';
+        }else if (command === 'go to fifth page') { 
+            alert('sowwy, there are only 4 pages (+ this one)');
+        }else {
+          alert(`Unknown command: "${input.value}"`);
+        }
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>

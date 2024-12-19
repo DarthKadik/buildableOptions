@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v_SIMPLE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000003; 
+            color: #fbfbfb;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #f24236;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #fbfbfb;
+            margin-top: 10px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: #f3a712;
+            margin-bottom: 10px;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            color: #fbfbfb;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border: 1px solid #f24236;
+            border-radius: 8px;
+            background: #f3a712;
+            color: #fbfbfb;
+        }
+
+        .cta button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f24236;
+            color: #fbfbfb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #fbfbfb;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #eaeaea;
+        }
+
+        #svg-container {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            width: 80px;
+            height: auto;
+            transform-origin: center;
+            transform: rotate(0deg);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Buildable</h1>
+        <p>Where we make pasta without noodles</p>
+    </header>
+
+    <section class="content-section">
+        <h2>What</h2>
+        <p>
+            This is the most boring idk what I thought with this one. But. BUUUUT! It has a rotating logo in the bottom left corner. Go ahead and scroll!
+        </p>
+    </section>
+
+    <section class="content-section">
+        <h2>Baby shark</h2>
+        <p>
+            Du du du du du du duuuuuu du du du du du du duuu<br>Let's go hunt<br>...
+        </p>
+    </section>
+
+    <div class="cta">
+        <h2>Join</h2>
+        <p>Take the first step toward building something incredible.</p>
+        <button>Get Started</button>
+    </div>
+    <div style="height: 300vh"></div>
+    <div id="svg-container">
+        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.64 60.79" width="80">
+            <g id="LOGO">
+                <g>
+                    <path fill="#f24236" d="m39.49,22.8V7.6S26.32,0,26.32,0L0,15.2v30.39l26.32,15.2,26.32-15.2v-15.2l-13.16-7.6Zm-13.16,22.8l-13.16-7.6v-15.2l13.16-7.6v15.2l13.16,7.59h0s-13.16,7.61-13.16,7.61Z"/>
+                    <polygon fill="#f24236" points="39.48 37.99 39.48 37.99 26.32 30.39 39.48 37.99"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <footer>
+        &copy; 2024 buildable. No rights reserved
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const svg = document.getElementById('svg-container');
+            
+            svg.style.transform = `rotate(${scrollPosition / 5}deg)`;
+        });
+    </script>
+</body>
+</html>

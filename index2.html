@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v_ASCII</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100%;
+      overflow-y: auto;
+    }
+    body {
+        background: linear-gradient(
+          to top left, 
+          rgba(243, 167, 18, 0.6) 0%, 
+          rgba(0, 0, 3, 1) 20%
+        ),
+        linear-gradient(
+          to bottom right, 
+          rgba(242, 66, 54, 0.6) 0%, 
+          rgba(0, 0, 3, 1) 20%
+        );
+      background-blend-mode: screen;
+      color: #fbfbfb;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo {
+      background-image: url('lockup.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    h1, h2 {
+      color: #f3a712;
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+    .animated-text span {
+      display: inline-block;
+      animation: flipIn 2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    @keyframes flipIn {
+      0% { transform: rotateX(-90deg); opacity: 0; }
+      50% { transform: rotateX(20deg); opacity: 1; }
+      100% { transform: rotateX(0deg); }
+    }
+    h1 span, h2 span {
+      animation-delay: calc(var(--index) * 0.1s);
+    }
+    .ascii-section {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .ascii-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      color: #fbfbfb;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .ascii-button:hover {
+      color: #f24236;
+    }
+    .ascii-divider {
+      margin: 20px 0;
+      font-size: 14px;
+      color: #f3a712;
+      background: linear-gradient(45deg, #f24236, #f3a712, #000003);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 12px;
+      border-top: 1px dashed #f3a712;
+      padding-top: 10px;
+    }
+    a {
+      color: #f3a712;
+      text-decoration: none;
+    }
+    .cursor-trail {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: #f3a712;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      transition: transform 0.1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo"></div>
+    <div class="ascii-section">
+      <h1 class="animated-text">
+        <span style="--index: 0">h</span>
+        <span style="--index: 1">e</span>
+        <span style="--index: 2">y</span>
+        <span style="--index: 3">o</span>
+        <span style="--index: 4">!</span>
+      </h1>
+      <p>
+        build whatever you want, however you want.<br>the only limit is your local legal-system—or not, we don't care 
+      </p>
+      <a href="#" class="ascii-button">
+        <pre>
++------------------+
+|    lets do it    |
++------------------+
+        </pre>
+      </a>
+      <a href="#" class="ascii-button">
+        <pre>
++------------------+
+|    more info     |
++------------------+
+        </pre>
+      </a>
+    </div>
+
+    <div class="ascii-section">
+      <div class="ascii-divider">*************************</div>
+      <h2 class="animated-text">
+        <span style="--index: 0">w</span>
+        <span style="--index: 1">h</span>
+        <span style="--index: 2">a</span>
+        <span style="--index: 3">t</span>
+        <span style="--index: 4">?</span>
+      </h2>
+      <p>
+        we give you a bunch of random text:
+      </p>
+      <ul>
+        <li>🔸 this & that with they & them</li>
+        <li>🔸 chickpea, peachick, peapea and chickchick</li>
+        <li>🔸 Real-world projects</li>
+        <li>🔸 Prizes and recognition</li>
+      </ul>
+      <div class="ascii-divider">*************************</div>
+    </div>
+
+    <div class="ascii-section">
+      <h2 class="animated-text">
+        <span style="--index: 0">j</span>
+        <span style="--index: 1">o</span>
+        <span style="--index: 2">i</span>
+        <span style="--index: 3">n</span>
+        <span style="--index: 4">t</span>
+        <span style="--index: 5"> </span>
+        <span style="--index: 6">t</span>
+        <span style="--index: 7">o</span>
+        <span style="--index: 8">d</span>
+        <span style="--index: 9">a</span>
+        <span style="--index: 10">y</span>
+      </h2>
+      <p>you never know, the future is by definition unknowable</p>
+      <a href="#" class="ascii-button">
+        <pre>
++---------------------------+
+|    sign up now to build!  |
++---------------------------+
+        </pre>
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>built w/ <3 | <a href="#">some policy</a> | <a href="#">other link</a></p>
+    </div>
+  </div>
+
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <script>
+    const cursorTrail = document.getElementById('cursor-trail');
+
+    document.addEventListener('mousemove', (e) => {
+      cursorTrail.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+    });
+
+  </script>
+</body>
+</html>

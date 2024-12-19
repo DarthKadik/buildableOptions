@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v_ROTATE</title>
+    <style>
+        body {
+            margin: 0;
+            height: 200vh;
+            background-color: black;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        #svg-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            width: 52.64px;
+            z-index: -1;
+            transition: transform 0.2s;
+        }
+        .body-container {
+            top: 2300px;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20vh;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .content h1 {
+            font-size: 3rem;
+        }
+        .content p {
+            font-size: 1.5rem;
+        }
+
+        .second {
+            top: 4000px;
+        }
+
+        .body-container .content:first-child {
+            text-align: right;
+            rotate: 30deg;
+        }
+
+        .body-container .content:last-child {
+            text-align: left;
+            rotate: -30deg;
+        }
+    </style>
+</head>
+<body>
+    <div id="svg-container">
+        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.64 60.79" width="52.64" height="60.79">
+            <defs>
+                <style>
+                  .cls-1 {
+                    fill: #fff;
+                    stroke-width: 0px;
+                  }
+                  .cls-2 {
+                    fill: #fff;
+                    font-size: 4px;
+                    font-family: Arial, sans-serif;
+                    text-anchor: middle;
+                    transform: rotate(-30deg);
+                  }
+                </style>
+              </defs>
+              <g id="LOGO">
+                <g>
+                  <path class="cls-1" d="m39.49,22.8V7.6S26.32,0,26.32,0L0,15.2v30.39l26.32,15.2,26.32-15.2v-15.2l-13.16-7.6Zm-13.16,22.8l-13.16-7.6v-15.2l13.16-7.6v15.2l13.16,7.59h0s-13.16,7.61-13.16,7.61Z"/>
+                  <polygon class="cls-1" points="39.48 37.99 39.48 37.99 26.32 30.39 39.48 37.99"/>
+                </g>
+                <text id="dynamic-text" x="26.32" y="35" class="cls-2 dynamic-text">Hello SVG!</text>
+              </g>
+        </svg>
+    </div>
+    <div class="body-container">
+        <div class="content">
+            <h1>Example title</h1>
+            <p></p>
+        </div>
+        <div class="content">
+            <h1></h1>
+            <p>i look bad<br>and awful even<br> but maybe<br>i can be made<br>good</p>
+        </div>
+    </div>
+    <div class="body-container second">
+        <div class="content">
+            <h1></h1>
+            <p>More content</p>
+        </div>
+        <div class="content">
+            <h1>Ouch</h1>
+            <p>Ouch</p>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const container = document.getElementById('svg-container');
+            const text = document.getElementById('dynamic-text');
+            const windowHeight = window.innerHeight;
+            const svgHeight = 60.79;
+            const maxScaleFactor = windowHeight / svgHeight * 2.5;
+
+            const scaleFactor = Math.min(1 + scrollPosition / 30, maxScaleFactor);
+            const translateX = Math.max(-10, -scrollPosition / 5); 
+            const rotateDeg = Math.max(-60, -scrollPosition / 8);
+
+            container.style.transform = `translate(${translateX}px, -50%) scale(${scaleFactor}) rotate(${rotateDeg}deg)`; //rotate(${rotateDeg}deg)
+
+            if (scaleFactor > 2) {
+                text.style.opacity = 1;
+            } else {
+                text.style.opacity = 0;
+            }
+        });
+    </script>
+</body>
+</html>

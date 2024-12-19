@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v_BLACK</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+        .inner-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2em;
+            margin-top: 1em;
+        }
+        .cards-carousel {
+            margin-top: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .cards-wrapper {
+            padding-top: 60px;
+            display: flex;
+            gap: 1em;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+        }
+
+        .cards {
+            display: flex;
+            gap: 1em;
+            animation: scrollCards 100s linear infinite;
+        }
+
+        .card {
+            border-radius: 0;
+            border: 2px solid #ffffff37;;
+            padding: 1em;
+            width: 175px;
+            margin-top: 0;
+            padding-top: 0;
+            text-align: left;
+            height: 70%;
+            color: #d0d0d0;
+        }
+
+        .card h2 {
+            margin: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        @keyframes scrollCards {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #000003;
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            background-position: 50% 50%;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 5em;
+            color: #fff;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: left;
+            padding: 0 1em;
+            font-size: 2.5em;
+            line-height: 1.2;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 3rem;
+            color: #f0f0f0;
+            text-align: left;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            margin: 0.5em 0 2em 0;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        
+
+        
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-left: 2em;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        .courses-section {
+            padding: 0 2em 2em 2em;
+            text-align: left;
+            margin: 4em auto;
+            margin-bottom: 0;
+            max-width: 700px;
+            border-radius: 0;
+            border: 2px dashed #ffffff37;
+        }
+
+        .courses-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #f0f0f0;
+            margin-bottom: 0.5em;
+            margin-left: 24px;
+        }
+
+        .courses-section p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: #d0d0d0;
+            line-height: 1.8;
+            width: 100%;
+            margin: 0 24px;
+        }
+
+        .inner-section {
+            padding: 0 2em 2em 2em;
+            text-align: center;
+            margin-bottom: 0;
+            width: 75%;
+            border-radius: 0;
+            border: 2px solid #ffffff37;
+        }
+
+        .inner-content p {
+            margin-left: 0;
+        }
+
+        .inner-content h2 {
+            margin-left: 0;
+        }
+
+        #filters {
+            height: 60px;
+        }
+
+        .hero-content svg {
+            margin: 10px 0;
+        }
+
+        .hero-content span {
+            
+        }
+/* 
+        .courses-section {
+            box-shadow:
+        0 0 10px rgba(243, 167, 18, 0.7),   
+        0 0 20px rgba(243, 167, 18, 0.5),   
+        0 0 40px rgba(242, 66, 54, 0.5),   
+        0 0 80px rgba(242, 66, 54, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+        } */
+
+        .hero-content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 100vw;
+        }
+
+        .hero-content h1{
+            text-align: center;
+        }
+
+        #text1,
+        #text2 {
+            position: absolute;
+            width: auto;
+            display: block;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 550;
+            color: #f3a712;
+            font-size: 2em;
+            text-align: center;
+            user-select: none;
+        }
+
+        #container {
+            margin-left: 0;
+            width: auto;
+            height: auto;
+            filter: url(#threshold) blur(0.6px);
+        }
+
+    </style>
+</head>
+<body>
+    <section class="hero" id="heroElement">
+        <div class="hero-content">
+            <h1>What are you building?</h1>
+            <div id="container">
+                <span id="text1"></span>
+                <span id="text2"></span>
+            </div>
+
+            <svg id="filters">
+                <defs>
+                    <filter id="threshold">
+                        <feColorMatrix
+                            in="SourceGraphic"
+                            type="matrix"
+                            values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 255 -140"
+                        />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="courses-content">
+            <h2>Intro</h2>
+            <p>
+                Get a bunch of you maniacs online and check in whether or not you are actually building some shit. Super simple. Super good. Accountability and motivation?
+                What else do ya need? Oh... money? Weird... only you could tie your existence to a few pieces of paper. Your mom is dissapointed in you. And so are we.
+            </p>
+        </div>
+    </section>
+
+    <section class="cards-carousel">
+        <div class="cards-wrapper">
+            <div class="cards" id="cardsContainer">
+                <div class="card">
+                    <h2>Start building!</h2>
+                </div>
+                <div class="card">
+                    <h2>Aloita rakentaminen!</h2>
+                </div>
+                <div class="card">
+                    <h2>Kezdj építeni!</h2>
+                </div>
+                <div class="card">
+                    <h2>Börja bygga!</h2>
+                </div>
+                <div class="card">
+                    <h2>Fang an zu bauen!</h2>
+                </div>
+                <div class="card">
+                    <h2>Start building!</h2>
+                </div>
+                <div class="card">
+                    <h2>Aloita rakentaminen!</h2>
+                </div>
+                <div class="card">
+                    <h2>Kezdj építeni!</h2>
+                </div>
+                <div class="card">
+                    <h2>Börja bygga!</h2>
+                </div>
+                <div class="card">
+                    <h2>Fang an zu bauen!</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="courses-content">
+            <h2>Why</h2>
+            <div class="inner-grid">
+                <section class="inner-section">
+                    <div class="inner-content">
+                        <h2 data-target="0">0</h2>
+                        <p>cost for you</p>
+                    </div>
+                </section>
+                <section class="inner-section">
+                    <div class="inner-content">
+                        <h2 data-target="100">100</h2>
+                        <p>% legit</p>
+                    </div>
+                </section>
+                <section class="inner-section">
+                    <div class="inner-content">
+                        <h2 data-target="6">6</h2>
+                        <p>weeks, that's all</p>
+                    </div>
+                </section>
+                <section class="inner-section">
+                    <div class="inner-content">
+                        <h2 data-target="999">999</h2>
+                        <p>other reasons</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const words = ['app to find local swimming pools', 'cast-iron sword from soy', 'chickpea from chicken and pea', 'egg mcmuffin make', 'baconizitor'];
+            let currentWordIndex = 0;
+            let currentWord = words[currentWordIndex];
+
+            const morphTime = 1;
+            const cooldownTime = 1.5;
+
+            let morph = 0;
+            let cooldown = cooldownTime;
+            let textIndex = words.length - 1;
+            let time = new Date();
+
+            const text1 = document.getElementById('text1');
+            const text2 = document.getElementById('text2');
+            const heroElement = document.getElementById('heroElement');
+            const cardsContainer = document.querySelector('.cards');
+
+            let impactCounters;
+
+            text1.textContent = words[textIndex % words.length];
+            text2.textContent = words[(textIndex + 1) % words.length];
+            animate();
+            window.addEventListener('scroll', handleScroll);
+            window.addEventListener('mousemove', handleMouseMove);
+
+            const cards = Array.from(cardsContainer.children);
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                cardsContainer.appendChild(clone);
+            });
+
+            impactCounters = document.querySelectorAll('.inner-content h2');
+            const observer = new IntersectionObserver(handleIntersection, {
+                threshold: 0.5,
+            });
+
+            impactCounters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            function doMorph() {
+                morph -= cooldown;
+                cooldown = 0;
+
+                let fraction = morph / morphTime;
+
+                if (fraction > 1) {
+                    cooldown = cooldownTime;
+                    fraction = 1;
+                }
+
+                setMorph(fraction);
+            }
+
+            function setMorph(fraction) {
+                text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+                text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+                fraction = 1 - fraction;
+                text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+                text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+                text1.textContent = words[textIndex % words.length];
+                text2.textContent = words[(textIndex + 1) % words.length];
+            }
+
+            function doCooldown() {
+                morph = 0;
+
+                text2.style.filter = '';
+                text2.style.opacity = '100%';
+
+                text1.style.filter = '';
+                text1.style.opacity = '0%';
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                let newTime = new Date();
+                let shouldIncrementIndex = cooldown > 0;
+                let dt = (newTime.getTime() - time.getTime()) / 1000;
+                time = newTime;
+
+                cooldown -= dt;
+
+                if (cooldown <= 0) {
+                    if (shouldIncrementIndex) {
+                        textIndex++;
+                    }
+
+                    doMorph();
+                } else {
+                    doCooldown();
+                }
+            }
+
+            function handleScroll() {
+                const scrollPosition = window.scrollY;
+                const heroHeight = heroElement ? heroElement.clientHeight : 0;
+                const fadeStart = heroHeight / 3;
+                const fadeEnd = heroHeight;
+
+                let opacity = 1;
+                if (scrollPosition > fadeStart) {
+                    opacity = 1 - Math.min((scrollPosition - fadeStart) / (fadeEnd - fadeStart), 1);
+                }
+
+                text1.style.opacity = `${opacity}`;
+                text2.style.opacity = `${opacity}`;
+            }
+
+            function handleMouseMove(event) {
+                const { clientX, clientY } = event;
+                const { innerWidth, innerHeight } = window;
+
+                const xPercent = (clientX / innerWidth) * 100;
+                const yPercent = (clientY / innerHeight) * 100;
+
+                if (heroElement) {
+                    heroElement.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+                }
+            }
+
+            function handleIntersection(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const targetValue = parseInt(target.dataset.target || '0');
+                        countUp(target, targetValue);
+                    }
+                });
+            }
+
+            function countUp(element, target) {
+                const duration = 2000;
+                const step = Math.ceil(target / (duration / 16));
+                let current = 0;
+
+                function updateCounter() {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        element.textContent = target.toString();
+                    } else {
+                        element.textContent = current.toString();
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+
+                updateCounter();
+            }
+        });
+    </script>
+</body>
+</html>
